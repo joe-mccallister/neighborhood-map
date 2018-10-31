@@ -4,6 +4,10 @@ import axios from 'axios'
 
 class App extends Component {
 
+state = {
+  venues: []
+}
+
   componentDidMount(){
     this.getVenues()
     this.renderMap()
@@ -26,7 +30,9 @@ getVenues = () => {
 
   axios.get(endPoint + new URLSearchParams(parameters))
     .then(response => {
-      console.log(response)
+      this.setState({
+        venues: response.data.response.groups[0].items
+      })
     })
     .catch(error => {
       console.log("ERROR " + error)

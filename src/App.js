@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios'
 
 class App extends Component {
 
@@ -11,6 +12,21 @@ class App extends Component {
     loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyBVuYwtERyg82CFa4CH_NmIOlPBZBMxsfs&callback=initMap")
     window.initMap = this.initMap
   }
+
+getVenues = () => {
+  const endPoint = "https://api.foursquare.com/v2/venues/explore"
+  const parameters = {
+    client_id: "",
+    client_secret: "",
+    query: "drinks",
+    near: "Denver, CO",
+  }
+
+  axios.get(endPoint + new URLSearchParams(parameters))
+    .then(response => {
+      console.log(response)
+    })
+}  
 
   initMap = () => {
      var map = new window.google.maps.Map(document.getElementById('map'), {

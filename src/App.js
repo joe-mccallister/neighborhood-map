@@ -5,6 +5,7 @@ import axios from 'axios'
 class App extends Component {
 
   componentDidMount(){
+    this.getVenues()
     this.renderMap()
   }
 
@@ -14,12 +15,13 @@ class App extends Component {
   }
 
 getVenues = () => {
-  const endPoint = "https://api.foursquare.com/v2/venues/explore"
+  const endPoint = "https://api.foursquare.com/v2/venues/explore?"
   const parameters = {
     client_id: "U5KSKJF0XTNWXACBB5BQZTZCAHZYRYJ0Z0ALBSURJJXIYVRY",
     client_secret: "B4UZAAKVMHGILD3IWA3TOVG0USBKOX04AZBIMEPJMJTAK5YE",
     query: "drinks",
     near: "Denver, CO",
+    v: "20182507"
   }
 
   axios.get(endPoint + new URLSearchParams(parameters))

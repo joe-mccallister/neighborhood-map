@@ -51,12 +51,7 @@ getVenues = () => {
   //dynamic markers
  this.state.venues.map(myVenue => {
 
-      
-  var contentString = `${myVenue.venue.name}, ${myVenue.venue.location.address}, ${myVenue.venue.location.city}, ${myVenue.venue.location.state}`
-      
-    
-
-
+  var contentString = `${myVenue.venue.name}, ${myVenue.venue.location.address}, ${myVenue.venue.location.city}, ${myVenue.venue.location.state}`   
       //create marker
       var marker = new window.google.maps.Marker({
         position: {lat: myVenue.venue.location.lat, lng: myVenue.venue.location.lng},

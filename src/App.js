@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'
 
+
 class App extends Component {
 
 state = {
@@ -74,7 +75,7 @@ getVenues = () => {
   render() {
     return (
       <main>
-        <div id="map"></div>
+        <div id="map"></div>       
       </main>
     );
   }

@@ -43,7 +43,7 @@ getVenues = () => {
     //create map
     var map = new window.google.maps.Map(document.getElementById('map'), {
       center: {lat: 39.762989, lng: -104.983984},
-      zoom: 15
+      zoom: 14
          })
       
   //create infowindow
@@ -75,12 +75,7 @@ getVenues = () => {
   render() {
     return (
       <main>
-        <div id="map">
-          <div>
-            <menu id="slide"
-
-          </div>
-        </div>       
+        <div id="map"></div>       
       </main>
     );
   }

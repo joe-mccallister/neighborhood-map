@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'
-import { slide as Menu } from 'react-burger-menu'
 
 class App extends Component {
 
@@ -67,7 +66,7 @@ getVenues = () => {
           //open infowindow
           infowindow.open(map, marker)
             })
-          
+        
           })
         
         }

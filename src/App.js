@@ -22,7 +22,7 @@ getVenues = () => {
   const parameters = {
     client_id: "U5KSKJF0XTNWXACBB5BQZTZCAHZYRYJ0Z0ALBSURJJXIYVRY",
     client_secret: "B4UZAAKVMHGILD3IWA3TOVG0USBKOX04AZBIMEPJMJTAK5YE",
-    query: "drinks",
+    query: "brewery",
     near: "Denver, CO",
     v: "20182507"
   }
@@ -38,20 +38,21 @@ getVenues = () => {
     })
 }  
 
-  initMap = () => {
-    //create map
-    var map = new window.google.maps.Map(document.getElementById('map'), {
-      center: {lat: 39.762989, lng: -104.983984},
-      zoom: 14
-         })
+initMap = () => {
+   //create map
+   var map = new window.google.maps.Map(document.getElementById('map'), {
+     center: {lat: 39.762989, lng: -104.983984},
+     zoom: 14
+        })
       
   //create infowindow
   var infowindow = new window.google.maps.InfoWindow()
 
-  //dynamic markers
- this.state.venues.map(myVenue => {
 
-  var contentString = `${myVenue.venue.name}, ${myVenue.venue.location.address}, ${myVenue.venue.location.city}, ${myVenue.venue.location.state}`   
+  //dynamic markers
+  this.state.venues.map(myVenue => {
+
+   var contentString = `${myVenue.venue.name}, ${myVenue.venue.location.address}, ${myVenue.venue.location.city}, ${myVenue.venue.location.state}`   
       //create marker
       var marker = new window.google.maps.Marker({
         position: {lat: myVenue.venue.location.lat, lng: myVenue.venue.location.lng},
@@ -66,10 +67,8 @@ getVenues = () => {
           //open infowindow
           infowindow.open(map, marker)
             })
-        
-          })
-        
-        }
+           })
+          }
 
   render() {
     return (

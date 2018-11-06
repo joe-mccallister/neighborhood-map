@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'
+import ListVenues from './ListVenues'
 
 class App extends Component {
 
@@ -68,12 +69,15 @@ initMap = () => {
           infowindow.open(map, marker)
             })
            })
+           let barList = [...this.state.venues];
           }
 
   render() {
     return (
       <main>
-        <div id="map"></div>       
+        <div id="map"></div>   
+
+        <ListVenues ListVenues={this.state.venues} />    
       </main>
     );
   }

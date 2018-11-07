@@ -3,10 +3,13 @@ import App from './App.js'
 
 class ListVenues extends Component {
     render() {
-        console.log('Props', this.props)
         return(
-            <ul className="bar-list">
-
+            <ul className='bar-list'>
+                {this.props.ListVenues.map((venue) => (
+                    <li key={ListVenues.id}>
+                        {venue.name}
+                    </li>
+                ))}
             </ul>
         )
     }

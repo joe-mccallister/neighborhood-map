@@ -8,7 +8,9 @@ class App extends Component {
 state = {
   venues: []
 }
-
+"dependencies": {
+  "axios": ">=0.21.1"
+}
   componentDidMount(){
     this.getVenues()
    }
